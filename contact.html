@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" name="portfolio" content="Ali's Web Development completions">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  rel="stylesheet" href="CSS/styles.css">
+        <title>Contact Us</title>
+    </head>    
+    <body>
+        <div id="banner">
+            <header>
+                <h1>Contact Us</h1>
+            </header>
+                <nav>
+                    <ul>
+                        <li id="navHome"><a href="Index.html">Home</a></li>
+                        <li id="navContact"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+        </div>
+    <main id="mainimg">
+        <div id="alignment">
+            <form method="POST" id="form">
+                <input type="hidden" name="access_key" value="dd1c4959-7ed1-4ef7-8523-123fde152bbe">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" required></input>
+                <br>
+                <label for="email">Email Address: </label>
+                <input type="email" name="email" id="email" required></input>
+                <br>
+                <label for="phone">Phone Number: </label>
+                <input type="tel" name="phone" id="phone" required></input>
+                <br>
+                <label for="message"></label>
+                <textarea name="message" id="message" value="Message" width= 400px required></textarea>
+                <br>
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <br>
+                <input type="submit" name="submit" id="submit" value="Send" required></input>
+
+                <div id="result"></div>
+            </form>
+        </div>
+        <script>
+            const form = document.getElementById('form');
+            const result = document.getElementById('result');
+
+            form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Please wait..."
+
+                fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                            result.innerHTML = "Form submitted successfully";
+                        } else {
+                            console.log(response);
+                            result.innerHTML = json.message;
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "Something went wrong!";
+                    })
+                    .then(function() {
+                        form.reset();
+                        setTimeout(() => {
+                            result.style.display = "none";
+                        }, 3000);
+                    });
+            });
+        </script>
+        </main>
+        <footer>
+            <h3>Contact</h3>
+            <p>Mobile: <a href="+447514447159">+447514447159</a></p>
+            <p>Email: <a href="mailto:alitrigg@msn.com">Alitrigg@msn.com</a></p>
+            <p>Social Media: <a href="https://www.facebook.com/profile.php?id=61577282480897" target="_blank">Facebook,</a><a href="www.instagram.com" target="_blank"> Instagram,</a><a href="www.twitter.com" target="_blank"> X,</a><a href="www.linkedin.com" target="_blank"> LinkedIn,</a><a href="https://github.com/Triggy95?tab=repositories" target="_blank"> Git Hub</a></p>
+        </footer>
+    </body>
+</html>

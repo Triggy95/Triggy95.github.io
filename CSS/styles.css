@@ -1,0 +1,300 @@
+/*Global styles*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px; /* Space for fixed header */
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s;
+}
+a:hover{
+    text-decoration: underline;
+    color: #0066cc;
+
+}
+
+/*page title will always float top left corner with the nav in the top right*/
+#banner{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 5%;
+    background-color: #1a1a1a;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+header h1{
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul{
+    display: flex;
+    gap: 25px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li{
+    padding: 5px 0;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+/*about me section on the left with image floating on the right*/
+ #aboutMe {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            padding: 5rem 5% 3rem;
+            align-items: flex-start;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 20px;
+        }
+
+        #facePicture {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            grid-column: 2;
+            grid-row: 1 / span 5;
+            object-fit: cover;
+        }
+
+        #aboutMe h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            border-bottom: 3px solid #66ccff;
+            padding-bottom: 10px;
+            display: inline-block;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        #aboutMe p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            grid-column: 1;
+        }
+
+        #aboutMe p:nth-of-type(1) {
+            grid-row: 2;
+        }
+
+        #aboutMe p:nth-of-type(2) {
+            grid-row: 3;
+        }
+
+        #aboutMe p:nth-of-type(3) {
+            grid-row: 4;
+        }
+
+
+
+/*project section aligned to the left with appropriate links*/
+#projects {
+    padding: 2rem 5%;
+    background-color: #f8f9fa;
+    margin: 30px 0;
+    border-radius: 10px;
+}
+        
+#projects h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+        
+#projects ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+        
+#projects ul li {
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.2rem;
+}
+        
+#projects ul li:before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    color: #0066cc;
+}
+        
+#projects ul li a {
+    color: #000;
+    font-weight: 600;
+    font-size: 1.3rem;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+#projects ul li a:hover{
+    color: #0066cc;
+}
+
+/*contact forum page*/
+#alignment{
+    width: auto;
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    background-color: #e3e4e7;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 70%;
+    border-radius: 10px;
+    
+
+}
+form input, form textarea{
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+}
+
+#message{
+    width: 90%;
+    height: 15rem;
+}
+
+#submit{
+    width: 6rem;
+    border-radius: 5px;
+}
+#submit:hover{
+    background-color: #000;
+    color: white;
+}
+
+/*contact us page background image*/
+#mainimg{
+    background-image: url("../MEDIA/florian-olivo-4hbJ-eymZ1o-unsplash.jpg") ;
+}
+
+
+/*footer centred and hyperlinks connected*/
+ footer {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    padding: 30px 5%;
+    margin-top: auto;
+}
+        
+footer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+        
+footer p {
+    color: #ffffff;
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+        
+footer a {
+    color: #0066cc;
+    font-weight: 500;
+}
+
+footer a:hover{
+    color: #fff;
+}
+
+
+ /* Responsive adjustments */
+@media (max-width: 768px) {
+    #aboutMe {
+        flex-direction: column;
+        align-items: center;
+    }
+            
+    #facePicture {
+        width: 250px;
+        margin-bottom: 30px;
+    }
+            
+    nav ul {
+        gap: 15px;
+    }
+            
+    nav ul li a {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+    }
+}
+        
+@media (max-width: 480px) {
+    #banner {
+        flex-direction: column;
+        padding: 15px;
+    }
+            
+    header h1 {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+            
+    nav ul {
+        gap: 10px;
+    }
+            
+    nav ul li a {
+        font-size: 1rem;
+    }
+}
